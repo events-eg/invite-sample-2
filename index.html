@@ -1585,6 +1585,37 @@ body.locked {
   }
 }
 
+
+/* ===== أقسام جديدة: المعرض / تأكيد الحضور / التهاني / المشاركة ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+.g-tile{position:relative;aspect-ratio:1/1.1;border-radius:18px;overflow:hidden;border:1px solid var(--border-gold);box-shadow:var(--shadow-soft);background:var(--surface-card);transition:transform .35s ease}
+.g-tile:hover{transform:translateY(-4px)}
+.g-tile svg{width:100%;height:100%;display:block}
+.g-tile figcaption{position:absolute;bottom:0;right:0;left:0;padding:18px 8px 8px;font-size:.78rem;font-weight:700;color:#fffdf8;background:linear-gradient(0deg,rgba(32,21,0,.72),transparent)}
+.sample-note{margin-top:14px;font-size:.78rem;color:var(--ink-muted)}
+.panel{background:var(--surface-card);border:1px solid var(--border-gold);border-radius:22px;box-shadow:var(--shadow-soft);padding:clamp(20px,5vw,30px) clamp(14px,4vw,24px);margin-top:22px;text-align:right}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label{font-size:.88rem;font-weight:700;color:var(--velvet-main)}
+.field input,.field textarea,.field select{font-family:var(--font-sans);font-size:1rem;padding:12px 14px;border:1px solid var(--border-gold);border-radius:14px;background:#fffdf5;color:var(--ink-dark);width:100%}
+.field input:focus,.field textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice label{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px;border-radius:14px;border:1px solid var(--border-gold);background:#fffdf5;font-weight:700;cursor:pointer;color:var(--velvet-main);transition:background .2s,color .2s}
+.choice input:checked+label{background:linear-gradient(135deg,var(--velvet-main),var(--gold-dark));color:#fffdf8;border-color:var(--gold)}
+.choice input:focus-visible+label{outline:2px solid var(--gold);outline-offset:2px}
+.stepper{display:flex;align-items:center;gap:12px;justify-content:flex-start}
+.stepper button{width:44px;height:44px;border-radius:50%;border:1px solid var(--border-gold);background:#fffdf5;font-size:1.4rem;color:var(--velvet-main);cursor:pointer}
+.stepper output{min-width:34px;text-align:center;font-size:1.3rem;font-weight:700;color:var(--velvet-main)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px}
+.actions .btn{margin-top:0}
+.honest{margin-top:12px;font-size:.8rem;color:var(--ink-muted);text-align:center;line-height:1.8}
+.wishes{display:grid;gap:12px;margin-top:22px}
+.wish{background:var(--surface-card);border:1px solid var(--border-gold);border-radius:18px;padding:16px;text-align:right;box-shadow:var(--shadow-soft)}
+.wish p{font-size:.98rem;line-height:1.9;color:var(--ink-dark)}
+.wish .who{display:flex;align-items:center;gap:10px;margin-top:10px;font-weight:700;color:var(--gold-dark);font-size:.88rem}
+.wish .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-bright),var(--gold-dark));color:#3b2a00;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:700}
+.badge-sample{display:inline-block;margin-right:auto;font-size:.68rem;padding:2px 10px;border-radius:999px;border:1px solid var(--border-gold);color:var(--ink-muted);font-weight:600}
+@media(max-width:520px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.choice{grid-template-columns:1fr 1fr}}
 </style>
   </head>
   <body>
@@ -2069,7 +2100,7 @@ body.locked {
           </div>
 
           <p id="countdown-finished" class="countdown-finished hidden">
-            ✨ اليوم هو يوم الفرحة الكبرى! أهلاً بكم معنا ✨
+            اليوم هو يوم الفرحة الكبرى! أهلاً بكم معنا
           </p>
 
           <button id="calendar-btn" class="btn btn-outline" type="button">
@@ -2171,6 +2202,99 @@ body.locked {
         </div>
       </section>
 
+
+      <section class="section gallery-section" id="gallery">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-kicker">المعرض</span>
+            <h2 class="section-title">لحظات من حكايتنا</h2>
+          </div>
+          <div class="gallery-grid">
+            <figure class="g-tile reveal"><svg viewBox="0 0 200 220" role="img" aria-label="الخواتم"><defs><linearGradient id="g6072" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6d6"/><stop offset="1" stop-color="#ffe18a"/></linearGradient></defs><rect width="200" height="220" fill="url(#g6072)"/><circle cx="85" cy="105" r="30" fill="none" stroke="#8a5d00" stroke-width="7"/><circle cx="118" cy="105" r="30" fill="none" stroke="#f2b705" stroke-width="7"/><path d="M100 60l8 10-8 8-8-8z" fill="#ffe14d" stroke="#8a5d00" stroke-width="2"/></svg><figcaption>الخواتم</figcaption></figure>
+            <figure class="g-tile reveal"><svg viewBox="0 0 200 220" role="img" aria-label="ورد وفرح"><defs><linearGradient id="g9135" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff1c2"/><stop offset="1" stop-color="#f6d56b"/></linearGradient></defs><rect width="200" height="220" fill="url(#g9135)"/><g transform="translate(100 105)"><ellipse rx="14" ry="32" cy="-30" fill="#fff6d6" stroke="#8a5d00" stroke-width="2" transform="rotate(0)"/><ellipse rx="14" ry="32" cy="-30" fill="#fff6d6" stroke="#8a5d00" stroke-width="2" transform="rotate(45)"/><ellipse rx="14" ry="32" cy="-30" fill="#fff6d6" stroke="#8a5d00" stroke-width="2" transform="rotate(90)"/><ellipse rx="14" ry="32" cy="-30" fill="#fff6d6" stroke="#8a5d00" stroke-width="2" transform="rotate(135)"/><ellipse rx="14" ry="32" cy="-30" fill="#fff6d6" stroke="#8a5d00" stroke-width="2" transform="rotate(180)"/><ellipse rx="14" ry="32" cy="-30" fill="#fff6d6" stroke="#8a5d00" stroke-width="2" transform="rotate(225)"/><ellipse rx="14" ry="32" cy="-30" fill="#fff6d6" stroke="#8a5d00" stroke-width="2" transform="rotate(270)"/><ellipse rx="14" ry="32" cy="-30" fill="#fff6d6" stroke="#8a5d00" stroke-width="2" transform="rotate(315)"/><circle r="14" fill="#f2b705" stroke="#8a5d00" stroke-width="2"/></g></svg><figcaption>ورد وفرح</figcaption></figure>
+            <figure class="g-tile reveal"><svg viewBox="0 0 200 220" role="img" aria-label="بوابة الفرح"><defs><linearGradient id="g9135" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffefb0"/><stop offset="1" stop-color="#f2c94c"/></linearGradient></defs><rect width="200" height="220" fill="url(#g9135)"/><path d="M45 190V105a55 55 0 0 1 110 0v85z" fill="none" stroke="#8a5d00" stroke-width="5"/><path d="M60 190V108a40 40 0 0 1 80 0v82z" fill="#fff6d6" opacity=".7"/><circle cx="100" cy="150" r="5" fill="#f2b705"/><path d="M85 190v-26M115 190v-26" stroke="#8a5d00" stroke-width="4"/></svg><figcaption>بوابة الفرح</figcaption></figure>
+            <figure class="g-tile reveal"><svg viewBox="0 0 200 220" role="img" aria-label="التورتة"><defs><linearGradient id="g1008" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff8dc"/><stop offset="1" stop-color="#ffe18a"/></linearGradient></defs><rect width="200" height="220" fill="url(#g1008)"/><rect x="55" y="140" width="90" height="36" rx="6" fill="#fff6d6" stroke="#8a5d00" stroke-width="3"/><rect x="70" y="108" width="60" height="32" rx="6" fill="#ffe99a" stroke="#8a5d00" stroke-width="3"/><rect x="85" y="80" width="30" height="28" rx="5" fill="#fff6d6" stroke="#8a5d00" stroke-width="3"/><path d="M100 80v-16" stroke="#8a5d00" stroke-width="3"/><path d="M100 50c8 8 8 14 0 16-8-2-8-8 0-16z" fill="#f2b705"/></svg><figcaption>التورتة</figcaption></figure>
+            <figure class="g-tile reveal"><svg viewBox="0 0 200 220" role="img" aria-label="فانوس السهرة"><defs><linearGradient id="g3030" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffefb0"/><stop offset="1" stop-color="#f2c94c"/></linearGradient></defs><rect width="200" height="220" fill="url(#g3030)"/><path d="M100 40v22" stroke="#8a5d00" stroke-width="3"/><path d="M78 62h44l10 24v50l-10 24H78l-10-24V86z" fill="#ffe99a" stroke="#8a5d00" stroke-width="3"/><path d="M78 62l-10 24M122 62l10 24M100 62v98" stroke="#8a5d00" stroke-width="2"/><circle cx="100" cy="112" r="14" fill="#fffbea" opacity=".9"/></svg><figcaption>فانوس السهرة</figcaption></figure>
+            <figure class="g-tile reveal"><svg viewBox="0 0 200 220" role="img" aria-label="حمامة السلام"><defs><linearGradient id="g7741" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff6d6"/><stop offset="1" stop-color="#f6d56b"/></linearGradient></defs><rect width="200" height="220" fill="url(#g7741)"/><path d="M50 120c30-40 70-40 100-10-20-4-35 2-45 14 8 6 14 16 14 26-14-12-30-12-45 0 2-16-8-26-24-30z" fill="#fffbea" stroke="#8a5d00" stroke-width="3"/><circle cx="150" cy="112" r="3" fill="#8a5d00"/><path d="M60 175h80" stroke="#f2b705" stroke-width="4" stroke-linecap="round"/></svg><figcaption>حمامة السلام</figcaption></figure>
+          </div>
+          <p class="sample-note">رسومات توضيحية للنموذج. في دعوتك الحقيقية بتتحط صوركم أنتم.</p>
+        </div>
+      </section>
+
+      <section class="section rsvp-section" id="rsvp">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-kicker">تأكيد الحضور</span>
+            <h2 class="section-title">هتشرفونا؟</h2>
+          </div>
+          <form class="panel reveal" id="rsvp-form" onsubmit="return false">
+            <div class="field">
+              <label for="rsvp-name">اسمك</label>
+              <input id="rsvp-name" type="text" autocomplete="name" placeholder="اكتب اسمك" maxlength="60" />
+            </div>
+            <div class="field">
+              <span class="lbl" style="font-size:.88rem;font-weight:700;color:var(--velvet-main)">هتحضر؟</span>
+              <div class="choice">
+                <div><input type="radio" name="att" id="att-yes" value="yes" checked /><label for="att-yes">هحضر إن شاء الله</label></div>
+                <div><input type="radio" name="att" id="att-no" value="no" /><label for="att-no">مش هقدر أحضر</label></div>
+              </div>
+            </div>
+            <div class="field" id="guests-field">
+              <span style="font-size:.88rem;font-weight:700;color:var(--velvet-main)">عدد الحضور (معاك)</span>
+              <div class="stepper">
+                <button type="button" id="g-plus" aria-label="زيادة">+</button>
+                <output id="g-count">1</output>
+                <button type="button" id="g-minus" aria-label="تقليل">-</button>
+              </div>
+            </div>
+            <div class="actions">
+              <button type="button" id="rsvp-send" class="btn btn-gold">أرسل ردك على واتساب</button>
+              <button type="button" id="rsvp-copy" class="btn btn-outline">انسخ الرسالة</button>
+            </div>
+            <p class="honest">الزرار بيفتح واتساب برسالة جاهزة لصاحب الدعوة وانت تبعتها بنفسك. مفيش حاجة بتتحفظ على الصفحة. في الدعوة الحقيقية الرد بيوصل لرقم صاحب الدعوة مباشرة.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section wishes-section" id="wishes">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-kicker">التهاني</span>
+            <h2 class="section-title">كلمات من قلوب الأحباب</h2>
+          </div>
+          <div class="wishes">
+            <article class="wish reveal"><p>ألف مبروك يا عمر ويا مريم، ربنا يجمع بينكم في خير ويرزقكم السعادة والبركة.</p><div class="who"><span class="av">أ</span>خالتكم أمل <span class="badge-sample">مثال</span></div></article>
+            <article class="wish reveal"><p>فرحتنا بيكم مش مفهومة. عقبال ما نشوف أولادكم، ومبروك من قلبي.</p><div class="who"><span class="av">ه</span>هبة وكريم <span class="badge-sample">مثال</span></div></article>
+            <article class="wish reveal"><p>الله يتمم لكم على خير. هنكون معاكم من أول الفرح لآخره إن شاء الله.</p><div class="who"><span class="av">م</span>محمود <span class="badge-sample">مثال</span></div></article>
+          </div>
+          <p class="sample-note">دي تهاني تجريبية للنموذج. في الدعوة الحقيقية بتظهر تهاني ضيوفكم بعد ما يبعتوها.</p>
+          <form class="panel reveal" id="wish-form" onsubmit="return false">
+            <div class="field">
+              <label for="wish-name">اسمك</label>
+              <input id="wish-name" type="text" maxlength="60" placeholder="اسمك" />
+            </div>
+            <div class="field">
+              <label for="wish-text">تهنئتك</label>
+              <textarea id="wish-text" rows="3" maxlength="240" placeholder="اكتب تهنئتك للعروسين"></textarea>
+            </div>
+            <div class="actions"><button type="button" id="wish-send" class="btn btn-gold">ابعت التهنئة على واتساب</button></div>
+            <p class="honest">التهنئة بتتبعت كرسالة واتساب لصاحب الدعوة ومش بتتنشر أو تتحفظ هنا.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section share-section" id="share">
+        <div class="container reveal">
+          <div class="section-header">
+            <span class="section-kicker">شارك الفرحة</span>
+            <h2 class="section-title">ابعت الدعوة لحد يحبه</h2>
+          </div>
+          <div class="actions">
+            <button type="button" id="share-wa" class="btn btn-gold">شارك على واتساب</button>
+          </div>
+        </div>
+      </section>
+
       <!-- 4. الخاتمة والدعاء -->
       <footer class="section closing-section">
         <div class="container reveal">
@@ -2183,7 +2307,7 @@ body.locked {
             بَيْنَهُمَا فِي خَيْر
           </p>
           <p class="closing-note" data-bind="texts.closingNote">
-            بوجودكم تكتمل فرحتنا ✨
+            بوجودكم تكتمل فرحتنا
           </p>
 
           <div class="footer-monogram" data-bind="couple.monogram">ي &amp; ش</div>
@@ -2254,7 +2378,7 @@ const WEDDING_CONFIG = {
       "بكل حب وسرور، نتشرف بدعوتكم لحضور حفل زفافنا ومشاركتنا أجمل لحظات العمر. حضوركم بيننا هو أجمل هدية تزيد فرحتنا بهجةً ونوراً.",
     closingDua:
       "اللَّهُمَّ بَارِكْ لَهُمَا وَبَارِكْ عَلَيْهِمَا وَاجْمَعْ بَيْنَهُمَا فِي خَيْر",
-    closingNote: "بوجودكم تكتمل فرحتنا ✨",
+    closingNote: "بوجودكم تكتمل فرحتنا",
   },
 
   // الأغنية: Pachelbel Canon in D (guitar) CC BY-SA 4.0, Free Music Archive via Wikimedia Commons
@@ -2812,5 +2936,42 @@ const WEDDING_CONFIG = {
 })();
 
 </script>
-  </body>
+  
+<script>
+(function(){
+  var HOST_WA = ""; // رقم واتساب صاحب الدعوة بالصيغة الدولية بدون + (فاضي في النموذج)
+  var NAMES = "عمر ومريم";
+  function toast(m){var t=document.getElementById('toast');if(!t)return;t.textContent=m;t.classList.add('is-shown');clearTimeout(window.__tt);window.__tt=setTimeout(function(){t.classList.remove('is-shown')},3000)}
+  function wa(text){var base=HOST_WA?('https://wa.me/'+HOST_WA):'https://wa.me/';window.open(base+'?text='+encodeURIComponent(text),'_blank','noopener')}
+  var n=1,c=document.getElementById('g-count');
+  function setN(v){n=Math.max(1,Math.min(10,v));c.textContent=String(n)}
+  document.getElementById('g-plus').onclick=function(){setN(n+1)};
+  document.getElementById('g-minus').onclick=function(){setN(n-1)};
+  function att(){return document.querySelector('input[name=att]:checked').value}
+  document.getElementById('att-no').onchange=document.getElementById('att-yes').onchange=function(){document.getElementById('guests-field').style.display=att()==='yes'?'':'none'};
+  function rsvpText(){
+    var name=(document.getElementById('rsvp-name').value||'').trim();
+    if(!name){toast('اكتب اسمك الأول');document.getElementById('rsvp-name').focus();return null}
+    if(att()==='yes')return 'تأكيد حضور: أنا '+name+' هحضر فرح '+NAMES+' إن شاء الله، وعدد الحضور '+n+'. ألف مبروك!';
+    return 'أنا '+name+' للأسف مش هقدر أحضر فرح '+NAMES+'، ألف مبروك وربنا يتمم لكم على خير.';
+  }
+  document.getElementById('rsvp-send').onclick=function(){var t=rsvpText();if(t)wa(t)};
+  document.getElementById('rsvp-copy').onclick=function(){
+    var t=rsvpText();if(!t)return;
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){toast('اتنسخت الرسالة')},function(){toast('معرفتش أنسخ، ابعتها من الزرار')})}
+    else toast('معرفتش أنسخ، ابعتها من الزرار');
+  };
+  document.getElementById('wish-send').onclick=function(){
+    var nm=(document.getElementById('wish-name').value||'').trim(),tx=(document.getElementById('wish-text').value||'').trim();
+    if(!nm||!tx){toast('اكتب اسمك وتهنئتك');return}
+    wa('تهنئة لـ '+NAMES+' من '+nm+': '+tx);
+  };
+  document.getElementById('share-wa').onclick=function(){
+    var u=location.href.split('#')[0];
+    var t='بكل حب نتشرف بدعوتكم لحفل زفاف '+NAMES+' يوم الجمعة ١١ ديسمبر ٢٠٢٦ الساعة ٧ مساءً في قاعة الماسة. افتح الدعوة من هنا: '+u;
+    window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank','noopener');
+  };
+})();
+</script>
+</body>
 </html>
